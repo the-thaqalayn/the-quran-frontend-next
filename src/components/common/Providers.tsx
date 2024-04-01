@@ -1,10 +1,9 @@
 "use client";
-import { NextUIProvider } from "@nextui-org/react";
 
 interface ProvidersProps {
   children: React.ReactNode;
 }
 const Providers = ({ children }: ProvidersProps) => {
-  return <NextUIProvider>{children}</NextUIProvider>;
+  return <div>{children}</div>;
 };
 export default Providers;
