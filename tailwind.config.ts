@@ -10,11 +10,7 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        surah: ['"surahnames"'],
-      },
-    },
+    extend: {},
   },
   darkMode: "class",
   plugins: [nextui()],
