@@ -1,16 +1,12 @@
 "use server";
 
-import SurahCard from "@/components/surah/SurahCard";
+import SurahList from "@/components/surah/SurahList";
+import { fetchChapters } from "@/db/queries";
 
 const Home = async ({}) => {
   return (
     <div>
-      <SurahCard
-        id={1}
-        simpleName="Al-Fatihah"
-        translatedName="The Opener"
-        versesCount={7}
-      />
+      <SurahList fechData={fetchChapters} />
     </div>
   );
 };
