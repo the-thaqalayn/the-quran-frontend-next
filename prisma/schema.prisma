@@ -1,0 +1,23 @@
+// This is your Prisma schema file,
+// learn more about it in the docs  https://pris.ly/d/prisma-schem
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+model Chapter {
+  id Int @id
+  revelation_place  String
+  revelation_order  Int
+  bismillah_pre Boolean
+  name_simple String
+  name_complex  String
+  name_arabic String
+  verses_count  Int
+  pages String
+  translated_name String
+}
