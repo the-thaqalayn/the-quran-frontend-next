@@ -1,5 +1,5 @@
 "use server";
-
+import type { Chapter } from "@prisma/client";
 import SurahCard from "./SurahCard";
 
 interface SurahListProps {
