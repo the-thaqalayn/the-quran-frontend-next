@@ -1,5 +1,5 @@
 "use server";
-import { Chapter } from "@/db/models";
+
 import SurahCard from "./SurahCard";
 
 interface SurahListProps {
