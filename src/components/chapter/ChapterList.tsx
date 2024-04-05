@@ -1,15 +1,15 @@
 "use server";
 import type { Chapter } from "@prisma/client";
-import SurahCard from "./SurahCard";
+import ChapterListCard from "./ChapterListCard";
 
-interface SurahListProps {
+interface ChapterListProps {
   fechData: () => Promise<Chapter[]>;
 }
-const SurahList = async ({ fechData }: SurahListProps) => {
+const ChapterList = async ({ fechData }: ChapterListProps) => {
   const chapters = await fechData();
 
-  const renderedSurahList = chapters.map((c) => (
-    <SurahCard
+  const renderedChapterList = chapters.map((c) => (
+    <ChapterListCard
       id={c.id}
       simpleName={c.name_simple}
       translatedName={c.translated_name}
@@ -18,8 +18,8 @@ const SurahList = async ({ fechData }: SurahListProps) => {
   ));
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {renderedSurahList}
+      {renderedChapterList}
     </div>
   );
 };
-export default SurahList;
+export default ChapterList;

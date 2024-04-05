@@ -1,19 +1,19 @@
 "use client";
 
 import Link from "next/link";
-interface SurahCardProps {
+interface ChapterListCardProps {
   id: number;
   simpleName: string;
   translatedName: string;
   versesCount: number;
 }
 
-const SurahCard = ({
+const ChapterListCard = ({
   id,
   simpleName,
   translatedName,
   versesCount,
-}: SurahCardProps) => {
+}: ChapterListCardProps) => {
   return (
     <Link key={id} href={`/${id}`} target="_blank" className="group">
       <div className="flex bg-white  group-hover:border-cyan-600 group-hover:bg-gray-100  w-full  flex-row align-middle justify-between border border-solid border-gray-200 rounded cursor-pointer p-4">
@@ -43,4 +43,4 @@ const SurahCard = ({
     </Link>
   );
 };
-export default SurahCard;
+export default ChapterListCard;
