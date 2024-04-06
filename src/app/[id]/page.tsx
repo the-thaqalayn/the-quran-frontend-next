@@ -1,6 +1,8 @@
 "use server";
 
 import VerseList from "@/components/verse/VerseList";
+import { getVersesByChapter } from "@/db/queries/verses";
+import { parse } from "path";
 
 interface ChapterShowProps {
   params: {
@@ -8,10 +10,11 @@ interface ChapterShowProps {
   };
 }
 const ChapterShowPage = async ({ params }: ChapterShowProps) => {
-  const { id } = params;
+  const chapterId = parseInt(params.id);
+
   return (
     <div>
-      <VerseList />
+      <VerseList fetchData={() => getVersesByChapter(chapterId)} />
     </div>
   );
 };

@@ -17,12 +17,11 @@ import type { Verse } from "@prisma/client";
 import { faBookmark, faCopy } from "@fortawesome/free-regular-svg-icons";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-
-export default function VerseListCard({
-  verse_key = "1:1",
-  page_number = 1,
-  code_v1 = "ﭖﭗﭘﭙﭚ",
-}: Verse) {
+interface VerseListCardProps {
+  verse: Verse;
+}
+export default function VerseListCard({ verse }: VerseListCardProps) {
+  const { verse_key = "1:1", page_number = 1, code_v1 = "ﭖﭗﭘﭙﭚ" } = verse;
   useFont(page_number);
   const TextArabic = styled.p<{ page: number }>`
     font-family: ${(props) => "p" + props.page};
