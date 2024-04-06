@@ -1,4 +1,7 @@
 "use server";
+
+import VerseList from "@/components/verse/VerseList";
+
 interface ChapterShowProps {
   params: {
     id: string;
@@ -6,6 +9,10 @@ interface ChapterShowProps {
 }
 const ChapterShowPage = async ({ params }: ChapterShowProps) => {
   const { id } = params;
-  return <div>ChapterShowPage</div>;
+  return (
+    <div>
+      <VerseList />
+    </div>
+  );
 };
 export default ChapterShowPage;
