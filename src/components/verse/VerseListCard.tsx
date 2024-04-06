@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import {
   Card,
@@ -15,14 +16,17 @@ import { useFont } from "@/app/utils/hooks/usefont";
 import type { Verse } from "@prisma/client";
 import { faBookmark, faCopy } from "@fortawesome/free-regular-svg-icons";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
 
 export default function VerseListCard({
   verse_key = "1:1",
   page_number = 1,
   code_v1 = "ﭖﭗﭘﭙﭚ",
 }: Verse) {
-  const [isFollowed, setIsFollowed] = useState(false);
   useFont(page_number);
+  const TextArabic = styled.p<{ page: number }>`
+    font-family: ${(props) => "p" + props.page};
+  `;
 
   return (
     <Card className="w-full p-4">
@@ -40,7 +44,7 @@ export default function VerseListCard({
       </CardHeader>
       <CardBody className="px-8 py-4 ">
         <div className="text-end text-4xl text-cyan-900 break-all">
-          <p className="font-[p1]">{code_v1}</p>
+          <TextArabic page={page_number}>{code_v1}</TextArabic>
         </div>
       </CardBody>
       <CardFooter className="gap-6">
