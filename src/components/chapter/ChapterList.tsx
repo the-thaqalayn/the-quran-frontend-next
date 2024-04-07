@@ -10,6 +10,7 @@ const ChapterList = async ({ fechData }: ChapterListProps) => {
 
   const renderedChapterList = chapters.map((c) => (
     <ChapterListCard
+      key={c.id}
       id={c.id}
       simpleName={c.name_simple}
       translatedName={c.translated_name}

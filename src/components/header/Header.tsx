@@ -11,23 +11,22 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
-  Button,
   Image,
   Dropdown,
   DropdownTrigger,
-  Avatar,
   DropdownMenu,
   DropdownItem,
 } from "@nextui-org/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import {
-  faEllipsisVertical,
-  faGear,
-  faHeart,
-  faMoon,
-  faSun,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
+// import { faGithub } from "@fortawesome/free-brands-svg-icons";
+// import {
+//   faEllipsisVertical,
+//   faGear,
+//   faHeart,
+//   faMoon,
+//   faSun,
+// } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -66,27 +65,25 @@ const Header = () => {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarContent justify="end">
-          <NavbarItem>
-            <Dropdown placement="bottom-end">
-              <DropdownTrigger>
-                <FontAwesomeIcon
-                  icon={faEllipsisVertical}
-                  size="lg"
-                  className="cursor-pointer text-white"
-                />
-              </DropdownTrigger>
-              <DropdownMenu aria-label="Profile Actions" variant="flat">
-                <DropdownItem key="theme">Theme</DropdownItem>
-                <DropdownItem key="bookmarks">My Bookmarks</DropdownItem>
-                <DropdownItem key="settings">My Settings</DropdownItem>
-                <DropdownItem key="logout" color="danger">
-                  Log Out
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </NavbarItem>
-        </NavbarContent>
+        <NavbarItem>
+          <Dropdown placement="bottom-end">
+            <DropdownTrigger>
+              <FontAwesomeIcon
+                icon={faEllipsisVertical}
+                size="lg"
+                className="cursor-pointer text-white"
+              />
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Profile Actions" variant="flat">
+              <DropdownItem key="theme">Theme</DropdownItem>
+              <DropdownItem key="bookmarks">My Bookmarks</DropdownItem>
+              <DropdownItem key="settings">My Settings</DropdownItem>
+              <DropdownItem key="logout" color="danger">
+                Log Out
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarMenu>
