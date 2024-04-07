@@ -19,7 +19,7 @@ const ChapterShowPage = async ({ params }: ChapterShowProps) => {
   );
 };
 export async function generateStaticParams() {
-  return ["1", "113", "114"];
+  return [{ id: "1" }, { id: "113" }, { id: "114" }];
 }
 
 export default ChapterShowPage;
