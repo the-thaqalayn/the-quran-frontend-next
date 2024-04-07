@@ -11,14 +11,18 @@ export const getFontFaceSource = (pageNumber: number, isV2: boolean) => {
   }/ttf/p${pageNumber}.ttf') format('truetype')`;
 };
 
-export const getFontFace = (pageNumber: number, isV2: boolean) => {
-  return new FontFace(
+// export const getFontFace = (pageNumber: number, isV2: boolean) => {
+//   return new FontFace(
+//     getFontFaceNameForPage(pageNumber),
+//     getFontFaceSource(pageNumber, isV2)
+//   );
+// };
+
+export const loadFontFace = async (pageNumber: number, isV2: boolean) => {
+  const fontFace = new FontFace(
     getFontFaceNameForPage(pageNumber),
     getFontFaceSource(pageNumber, isV2)
   );
-};
-
-export const loadFontFace = async (fontFace: FontFace) => {
   const loadedFont = await fontFace.load();
   document.fonts.add(loadedFont);
 };

@@ -1,4 +1,4 @@
-import { db } from "..";
+import { db } from "@/db";
 import type { Chapter } from "@prisma/client";
 
 // export type Chapter = {
@@ -14,8 +14,8 @@ import type { Chapter } from "@prisma/client";
 //   translated_name: string;
 // };
 
-export const fetchChapters = async (): Promise<Chapter[]> => {
-  return await db.chapter.findMany({
+export const fetchChapters = (): Promise<Chapter[]> => {
+  return db.chapter.findMany({
     where: {},
   });
 };

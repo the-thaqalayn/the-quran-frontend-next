@@ -8,7 +8,7 @@ const VerseList = async ({ fetchData }: VerseListProps) => {
   const renderedVerses = verses.map((v) => {
     return (
       <div>
-        <VerseListCard verse={v} />
+        <VerseListCard key={v.id} verse={v} />
       </div>
     );
   });

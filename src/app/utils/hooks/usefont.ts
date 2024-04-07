@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
-import { getFontFace, loadFontFace } from "../fontFaceHelper";
+import {
+  getFontFaceNameForPage,
+  getFontFaceSource,
+  loadFontFace,
+} from "@/app/utils/fontFaceHelper";
 
 export const useFont = (pageNumber: number, isV2: boolean = false) => {
-  const [fontFace] = useState(getFontFace(pageNumber, isV2));
+  const [page] = useState(pageNumber);
   useEffect(() => {
-    loadFontFace(fontFace);
-  }, [fontFace]);
+    loadFontFace(page, isV2);
+  }, [page]);
 };
