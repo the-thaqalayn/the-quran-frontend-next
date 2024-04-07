@@ -9,12 +9,12 @@ interface ChapterShowProps {
     id: string;
   };
 }
-const ChapterShowPage = async ({ params }: ChapterShowProps) => {
-  const chapterId = parseInt(params.id);
+const ChapterShowPage = async () => {
+  // const chapterId = parseInt(params.id);
 
   return (
     <div>
-      <VerseList fetchData={() => getVersesByChapter(chapterId)} />
+      <VerseList fetchData={() => getVersesByChapter(1)} />
     </div>
   );
 };
