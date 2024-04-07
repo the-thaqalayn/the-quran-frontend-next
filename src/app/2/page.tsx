@@ -14,7 +14,7 @@ const ChapterShowPage = async () => {
 
   return (
     <div>
-      <VerseList fetchData={() => getVersesByChapter(1)} />
+      <VerseList fetchData={() => getVersesByChapter(2)} />
     </div>
   );
 };
