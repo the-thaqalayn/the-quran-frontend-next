@@ -5,6 +5,7 @@ import VerseListCard from "./VerseListCard";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { fetchVerses } from "@/actions";
 import { useInView } from "react-intersection-observer";
+import styled from "styled-components";
 
 interface VerseListProps {
   search: Partial<Verse>;
@@ -21,6 +22,10 @@ const renderVerses = (vs: Verse[]) => {
     );
   });
 };
+const DivLoading = styled.div<{ hidden: boolean }>`
+  display: ${(props) => (props.hidden ? "hidden" : "flex")};
+  justify-content: center;
+`;
 
 const VerseList = ({ initialVerses, pages, search }: VerseListProps) => {
   const [page, setPage] = useState(pages[0]);
@@ -48,22 +53,10 @@ const VerseList = ({ initialVerses, pages, search }: VerseListProps) => {
 
   return (
     <div>
-      {/* <InfiniteScroll
-        pageStart={pages[0]}
-        loadMore={fetchMoreData}
-        hasMore={page < pages[1]}
-        loader={
-          <div className="justify-center" key="loader">
-            Loading ...
-          </div>
-        }
-      >
-        {renderVerses(verses)}
-      </InfiniteScroll> */}
       {renderVerses(verses)}
-      <div ref={ref} className="justify-center" key="loader">
+      <DivLoading ref={ref} hidden={page >= pages[1]} key="loader">
         Loading ...
-      </div>
+      </DivLoading>
     </div>
   );
 };
