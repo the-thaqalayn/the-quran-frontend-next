@@ -21,10 +21,13 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@nextui-org/react": "^2.2.10",
     "@prisma/client": "5.12.0",
+    "@types/react-infinite-scroller": "^1.2.5",
     "framer-motion": "^11.0.24",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-infinite-scroller": "^1.2.6",
+    "react-intersection-observer": "^9.8.2",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {

@@ -1,0 +1,1 @@
+export { fetchVerses } from "./verse";
