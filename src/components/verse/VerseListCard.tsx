@@ -21,14 +21,15 @@ interface VerseListCardProps {
   verse: Verse;
 }
 export default function VerseListCard({ verse }: VerseListCardProps) {
-  const { verse_key = "1:1", page_number = 1, code_v1 = "ﭖﭗﭘﭙﭚ" } = verse;
+  const { verse_key, page_number, code_v1 } = verse;
   useFont(page_number);
   const TextArabic = styled.p<{ page: number }>`
     font-family: ${(props) => "p" + props.page};
+    line-height: 4rem;
   `;
 
   return (
-    <Card className="w-full p-4">
+    <Card className="w-full p-4 my-3">
       <CardHeader className="justify-between">
         <div className="flex w-12 h-12 bg-blue-100 text-blue-600 rounded-full items-center justify-center">
           <h3>{verse_key}</h3>
