@@ -20,13 +20,15 @@ import styled from "styled-components";
 interface VerseListCardProps {
   verse: Verse;
 }
+
+const TextArabic = styled.p<{ page: number }>`
+  font-family: ${(props) => "p" + props.page};
+  line-height: 4rem;
+`;
+
 export default function VerseListCard({ verse }: VerseListCardProps) {
   const { verse_key, page_number, code_v1 } = verse;
   useFont(page_number);
-  const TextArabic = styled.p<{ page: number }>`
-    font-family: ${(props) => "p" + props.page};
-    line-height: 4rem;
-  `;
 
   return (
     <Card className="w-full p-4 my-3">
