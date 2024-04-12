@@ -8,6 +8,7 @@ import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import { useFont } from "@/app/utils/hooks/usefont";
 import { loadFontFace } from "@/app/utils/fontFaceHelper";
+import Bismillah from "@/components/bismillah/Bismillah";
 
 interface VerseListProps {
   search: Partial<Verse>;
@@ -58,6 +59,7 @@ const VerseList = ({ initialVerses, pages, search }: VerseListProps) => {
 
   return (
     <div>
+      <Bismillah chapterId={search.chapter_id} />
       {renderVerses(verses)}
       <DivLoading ref={ref} hidden={page >= pages[1]} key="loader">
         Loading ...
