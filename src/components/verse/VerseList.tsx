@@ -6,6 +6,8 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { fetchVerses } from "@/actions";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
+import { useFont } from "@/app/utils/hooks/usefont";
+import { loadFontFace } from "@/app/utils/fontFaceHelper";
 
 interface VerseListProps {
   search: Partial<Verse>;
@@ -32,23 +34,26 @@ const VerseList = ({ initialVerses, pages, search }: VerseListProps) => {
   const [verses, setVerses] = useState(initialVerses);
 
   const [ref, inView] = useInView();
+  //useFont(page);
 
-  const fetchMoreData = useCallback(async () => {
-    const next = page + 1;
-    console.log("Viewed:", next);
-    const result = await fetchVerses({ ...search, page_number: next });
-    console.log(result);
-    if (result?.length) {
-      setPage(next);
-      setVerses((prev: Verse[] | undefined) => [
-        ...(prev?.length ? prev : []),
-        ...result,
-      ]);
-    }
+  useEffect(() => {
+    const fetchMoreData = async () => {
+      console.log("Viewed:", page);
+      const result = await fetchVerses({ ...search, page_number: page });
+      console.log(result);
+      if (result?.length) {
+        loadFontFace(page, false);
+        setVerses((prev: Verse[] | undefined) => [
+          ...(prev?.length ? prev : []),
+          ...result,
+        ]);
+      }
+    };
+    fetchMoreData();
   }, [page]);
 
   useEffect(() => {
-    if (inView && page < pages[1]) fetchMoreData();
+    if (inView && page < pages[1]) setPage((p) => p + 1);
   }, [inView]);
 
   return (

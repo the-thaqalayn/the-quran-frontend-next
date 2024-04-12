@@ -3,7 +3,6 @@
 import VerseList from "@/components/verse/VerseList";
 import { getMinMaxPage, getVersesByPage } from "@/db/queries/verses";
 import { Verse } from "@prisma/client";
-import { useMemo, useState } from "react";
 
 interface ChapterShowProps {
   params: {
@@ -12,13 +11,10 @@ interface ChapterShowProps {
 }
 
 const ChapterShowPage = async ({ params }: ChapterShowProps) => {
-  const [chapterId] = useState<number>(parseInt(params.id));
-  const [search] = useState<Partial<Verse>>({ chapter_id: chapterId });
+  const chapterId = parseInt(params.id);
+  const search: Partial<Verse> = { chapter_id: chapterId };
+  const pages = await getMinMaxPage(search);
 
-  const pages = await useMemo(
-    async () => await getMinMaxPage(search),
-    [chapterId]
-  );
   return (
     <div>
       <VerseList
