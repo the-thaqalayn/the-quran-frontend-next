@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Card,
   CardHeader,
@@ -28,7 +28,6 @@ const TextArabic = styled.p<{ page: number }>`
 
 export default function VerseListCard({ verse }: VerseListCardProps) {
   const { verse_key, page_number, code_v1 } = verse;
-  useFont(page_number);
 
   return (
     <Card className="w-full p-4 my-3">
