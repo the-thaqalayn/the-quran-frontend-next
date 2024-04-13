@@ -36,26 +36,24 @@ const VerseList = ({ initialVerses, pages, search }: VerseListProps) => {
   const [verses, setVerses] = useState(initialVerses);
 
   const [ref, inView] = useInView();
-  //useFont(page);
+  const loadedFonts = useFont(page, false);
 
-  useEffect(() => {
-    const fetchMoreData = async () => {
-      console.log("Viewed:", page);
-      const result = await fetchVerses({ ...search, page_number: page });
-      console.log(result);
-      if (result?.length) {
-        loadFontFace(page, false);
-        setVerses((prev: Verse[] | undefined) => [
-          ...(prev?.length ? prev : []),
-          ...result,
-        ]);
-      }
-    };
-    fetchMoreData();
+  console.log("fonts:", JSON.stringify(loadedFonts));
+
+  const fetchMoreData = useCallback(async () => {
+    console.log("Viewed:", page);
+    const result = await fetchVerses({ ...search, page_number: page });
+    console.log(result);
+    if (result?.length) {
+      setVerses((prev) => [...prev, ...result]);
+    }
   }, [page]);
 
   useEffect(() => {
-    if (inView && page < pages[1]) setPage((p) => p + 1);
+    if (inView && page < pages[1]) {
+      setPage((p) => p + 1);
+      fetchMoreData();
+    }
   }, [inView]);
 
   return (

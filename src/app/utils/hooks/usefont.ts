@@ -8,7 +8,7 @@ export const useFont = (page: number, isV2: boolean = false) => {
     if (!fonts.includes(page)) {
       setFonts((p) => [...p, page]);
       loadFontFace(page, isV2);
-      console.log("fonts:", JSON.stringify(fonts));
     }
-  }, [page]);
+  }, [fonts, page, isV2]);
+  return fonts;
 };
