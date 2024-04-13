@@ -14,8 +14,16 @@ import type { Chapter } from "@prisma/client";
 //   translated_name: string;
 // };
 
-export const fetchChapters = (): Promise<Chapter[]> => {
+export const getChapters = (): Promise<Chapter[]> => {
   return db.chapter.findMany({
     where: {},
+  });
+};
+
+export const getChapterDetails = (
+  chapterId: number
+): Promise<Chapter | null> => {
+  return db.chapter.findFirst({
+    where: { id: chapterId },
   });
 };

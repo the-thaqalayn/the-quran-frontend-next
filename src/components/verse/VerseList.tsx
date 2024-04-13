@@ -9,6 +9,7 @@ import styled from "styled-components";
 import { useFont } from "@/app/utils/hooks/usefont";
 import { loadFontFace } from "@/app/utils/fontFaceHelper";
 import Bismillah from "@/components/bismillah/Bismillah";
+import ChapterHeader from "../header/ChapterHeader";
 
 interface VerseListProps {
   search: Partial<Verse>;
@@ -59,6 +60,9 @@ const VerseList = ({ initialVerses, pages, search }: VerseListProps) => {
 
   return (
     <div>
+      <div className="flex justify-center m-auto w-full lg:w-3/5">
+        <ChapterHeader chapterId={search.chapter_id} />
+      </div>
       <Bismillah chapterId={search.chapter_id} />
       {renderVerses(verses)}
       <DivLoading ref={ref} hidden={page >= pages[1]} key="loader">

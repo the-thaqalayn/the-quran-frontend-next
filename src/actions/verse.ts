@@ -1,8 +1,14 @@
 "use server";
 
+import { getChapterDetails } from "@/db/queries/chapers";
 import { getVersesByPage } from "@/db/queries/verses";
-import { Verse } from "@prisma/client";
+import { Chapter, Verse } from "@prisma/client";
 
 export const fetchVerses = async (search: Partial<Verse>): Promise<Verse[]> => {
   return await getVersesByPage(search);
+};
+export const fetchChapterDetails = async (
+  chapterId: number
+): Promise<Chapter | null> => {
+  return await getChapterDetails(chapterId);
 };
