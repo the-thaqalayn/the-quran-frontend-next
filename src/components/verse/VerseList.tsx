@@ -38,7 +38,7 @@ const VerseList = ({ initialVerses, pages, search }: VerseListProps) => {
   const [ref, inView] = useInView();
   const loadedFonts = useFont(page, false);
 
-  console.log("fonts:", JSON.stringify(loadedFonts));
+  // console.log("fonts:", JSON.stringify(loadedFonts));
 
   const fetchMoreData = useCallback(async () => {
     console.log("Viewed:", page);
