@@ -19,6 +19,7 @@ import {
 } from "@nextui-org/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
+import { ThemeSwitcher } from "../common/ThemeSwitcher";
 // import { faGithub } from "@fortawesome/free-brands-svg-icons";
 // import {
 //   faEllipsisVertical,
@@ -75,7 +76,10 @@ const Header = () => {
               />
             </DropdownTrigger>
             <DropdownMenu aria-label="Profile Actions" variant="flat">
-              <DropdownItem key="theme">Theme</DropdownItem>
+              <DropdownItem key="theme">
+                {" "}
+                <ThemeSwitcher />
+              </DropdownItem>
               <DropdownItem key="bookmarks">My Bookmarks</DropdownItem>
               <DropdownItem key="settings">My Settings</DropdownItem>
               <DropdownItem key="logout" color="danger">
