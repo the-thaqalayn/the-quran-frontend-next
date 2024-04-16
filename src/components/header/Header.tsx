@@ -59,7 +59,7 @@ const Header = () => {
           <Image
             src="/assets/images/quran-logo-w.png"
             alt="The Quran Logo"
-            className="dark:invert min-w-20"
+            className="dark:invert-[.25] min-w-20"
             width={100}
           />
         </NavbarBrand>
@@ -77,7 +77,6 @@ const Header = () => {
             </DropdownTrigger>
             <DropdownMenu aria-label="Profile Actions" variant="flat">
               <DropdownItem key="theme">
-                {" "}
                 <ThemeSwitcher />
               </DropdownItem>
               <DropdownItem key="bookmarks">My Bookmarks</DropdownItem>
