@@ -44,12 +44,12 @@ const Header = () => {
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="bg-blue-700"
+      className="bg-blue-700 dark:bg-cyan-800"
       position="sticky"
     >
       <NavbarContent className="" justify="start">
         <NavbarMenuToggle
-          className="text-white"
+          className="text-white dark:text-gray-200"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
       </NavbarContent>
@@ -72,7 +72,7 @@ const Header = () => {
               <FontAwesomeIcon
                 icon={faEllipsisVertical}
                 size="lg"
-                className="cursor-pointer text-white"
+                className="cursor-pointer text-white dark:text-gray-200"
               />
             </DropdownTrigger>
             <DropdownMenu aria-label="Profile Actions" variant="flat">

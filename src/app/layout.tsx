@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <Header />
-          <main className="bg-gray-50">
+          <main className="bg-gray-50 dark:bg-gray-700">
             <div className="container mx-auto min-h-screen">
               <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
             </div>
