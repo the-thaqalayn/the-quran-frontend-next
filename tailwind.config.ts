@@ -27,6 +27,13 @@ const config: Config = {
         },
         dark: {
           colors: {
+            // Changes:
+            // text-white dark:text-gray-200
+            // bg-gray-50 dark:bg-gray-700
+            // bg-blue-700 dark:bg-cyan-800
+            // bg-gray-100 dark:bg-gray-800
+            // text-gray-500 dark:text-gray-300
+
             // black: colors.orange[900],
             // white: colors.gray[600],
             background: colors.gray[700],

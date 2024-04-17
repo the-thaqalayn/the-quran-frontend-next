@@ -59,7 +59,7 @@ const Header = () => {
           <Image
             src="/assets/images/quran-logo-w.png"
             alt="The Quran Logo"
-            className="dark:invert-[.25] min-w-20"
+            className="dark:invert-[.15] min-w-20"
             width={100}
           />
         </NavbarBrand>
