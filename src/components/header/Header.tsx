@@ -20,17 +20,13 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { ThemeSwitcher } from "../common/ThemeSwitcher";
+import { useTheme } from "next-themes";
 // import { faGithub } from "@fortawesome/free-brands-svg-icons";
-// import {
-//   faEllipsisVertical,
-//   faGear,
-//   faHeart,
-//   faMoon,
-//   faSun,
-// } from "@fortawesome/free-solid-svg-icons";
+import { faGear, faBookBookmark } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const { theme } = useTheme();
 
   const menuItems = [
     { title: "Home", href: "#" },
@@ -79,10 +75,26 @@ const Header = () => {
               <DropdownItem key="theme">
                 <ThemeSwitcher />
               </DropdownItem>
-              <DropdownItem key="bookmarks">My Bookmarks</DropdownItem>
-              <DropdownItem key="settings">My Settings</DropdownItem>
-              <DropdownItem key="logout" color="danger">
-                Log Out
+              <DropdownItem key="bookmarks">
+                <span>
+                  <FontAwesomeIcon
+                    icon={faBookBookmark}
+                    size="lg"
+                    className="cursor-pointer text-black dark:text-gray-200 me-3"
+                  />
+                </span>
+                My Bookmarks
+              </DropdownItem>
+              <DropdownItem key="settings">
+                {" "}
+                <span>
+                  <FontAwesomeIcon
+                    icon={faGear}
+                    size="lg"
+                    className="cursor-pointer text-black dark:text-gray-200 me-3"
+                  />
+                </span>
+                My Settings
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
