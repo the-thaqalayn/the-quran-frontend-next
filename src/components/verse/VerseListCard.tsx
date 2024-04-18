@@ -30,10 +30,10 @@ export default function VerseListCard({ verse }: VerseListCardProps) {
   const { verse_key, page_number, code_v1 } = verse;
 
   return (
-    <Card className="w-full p-4 my-3">
-      <CardHeader className="justify-between">
-        <div className="flex w-12 h-12 bg-blue-100 text-blue-600 rounded-full items-center justify-center">
-          <h3>{verse_key}</h3>
+    <Card className="w-full p-4 my-3  dark:bg-gray-600 ">
+      <CardHeader className="justify-between ">
+        <div className="flex w-12 h-12 bg-blue-100 dark:bg-cyan-800  border border-solid dark:border-gray-400 text-blue-600 rounded-full items-center justify-center">
+          <h3 className="dark:text-gray-50">{verse_key}</h3>
         </div>
         <div>
           <FontAwesomeIcon
@@ -45,7 +45,9 @@ export default function VerseListCard({ verse }: VerseListCardProps) {
       </CardHeader>
       <CardBody className="px-8 py-4 ">
         <div className="text-end text-4xl text-cyan-900 break-all">
-          <TextArabic page={page_number}>{code_v1}</TextArabic>
+          <TextArabic page={page_number} className="dark:text-cyan-500">
+            {code_v1}
+          </TextArabic>
         </div>
       </CardBody>
       <CardFooter className="gap-6">
