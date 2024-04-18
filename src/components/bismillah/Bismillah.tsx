@@ -15,7 +15,7 @@ const Bismillah = ({ chapterId }: BismillahProps) => {
         <Image
           src="/assets/images/bismillah.svg"
           alt="bismillah"
-          className="dark:invert"
+          className="dark:invert-[.8]"
           width={220}
           height={45}
           priority
