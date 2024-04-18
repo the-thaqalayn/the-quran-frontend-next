@@ -34,10 +34,17 @@ const Header = () => {
   const { theme, setTheme } = useTheme();
 
   const menuItems = [
-    { title: "Home", href: "#" },
-    { title: "Sponsor", href: "#" },
-    { title: "Feedback", href: "#" },
-    { title: "Developers (GitHub)", href: "#" },
+    { title: "Surah", href: "/" },
+    { title: "Revelation Order", href: "/" },
+    { title: "Juz", href: "/" },
+    { title: "Hizb", href: "/" },
+    { title: "Rub el Hizb", href: "/" },
+    { title: "Manzil", href: "/" },
+    { title: "Ruku", href: "/" },
+    { title: "Page", href: "/" },
+    // { title: "Sponsor", href: "#" },
+    // { title: "Feedback", href: "#" },
+    // { title: "Developers (GitHub)", href: "#" },
   ];
 
   return (
@@ -48,7 +55,7 @@ const Header = () => {
       className="bg-blue-700 dark:bg-cyan-800"
       position="sticky"
     >
-      <NavbarContent className="" justify="start">
+      <NavbarContent justify="start">
         <NavbarMenuToggle
           className="text-white dark:text-gray-200"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -112,6 +119,20 @@ const Header = () => {
               </Tooltip>
             </li>
             <li>
+              <Tooltip
+                placement="bottom"
+                color="foreground"
+                content="Github"
+                size="sm"
+              >
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  size="xl"
+                  className="cursor-pointer text-white dark:text-gray-200 me-3"
+                />
+              </Tooltip>
+            </li>
+            <li>
               <ThemeSwitcher />
             </li>
           </ul>
@@ -153,11 +174,12 @@ const Header = () => {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarMenu>
+      <NavbarMenu className="text-center text-xl font-bold pt-10">
+        <h1>Table Of Contents By</h1>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`xs-${item}-${index}`}>
-            <Link className="w-full" href={item.href} size="lg">
-              {item.title}
+            <Link href={item.href} size="lg">
+              <h2>{item.title}</h2>
             </Link>
           </NavbarMenuItem>
         ))}
