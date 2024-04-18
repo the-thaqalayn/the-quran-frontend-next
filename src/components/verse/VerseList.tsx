@@ -50,11 +50,16 @@ const VerseList = ({ initialVerses, pages, search }: VerseListProps) => {
   }, [page]);
 
   useEffect(() => {
-    if (inView && page < pages[1]) {
+    if (inView) {
       setPage((p) => p + 1);
-      fetchMoreData();
     }
   }, [inView]);
+
+  useEffect(() => {
+    if (page > pages[0] && page < pages[1]) {
+      fetchMoreData();
+    }
+  }, [page]);
 
   return (
     <div>
