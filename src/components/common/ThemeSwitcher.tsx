@@ -3,26 +3,32 @@ import { useTheme } from "next-themes";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { Tooltip } from "@nextui-org/react";
+import { useEffect } from "react";
 
 export const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div>
-      <span>
-        <FontAwesomeIcon
-          icon={theme === "light" ? faMoon : faSun}
-          size="lg"
-          className="cursor-pointer text-black dark:text-gray-200 me-3"
-        />
-      </span>
-      <button
-        onClick={() => {
-          theme === "light" ? setTheme("dark") : setTheme("light");
-        }}
+    <span className="ps-5">
+      <Tooltip
+        placement="bottom"
+        color="foreground"
+        content={theme === "light" ? "Dark Mode" : "Light Mode"}
+        size="sm"
       >
-        {theme === "light" ? "Dark" : "Light"} Mode
-      </button>
-    </div>
+        <button
+          onClick={() => {
+            theme === "light" ? setTheme("dark") : setTheme("light");
+          }}
+        >
+          <FontAwesomeIcon
+            icon={theme === "light" ? faMoon : faSun}
+            size="xl"
+            className="cursor-pointer text-white dark:text-gray-200 me-3"
+          />
+        </button>
+      </Tooltip>
+    </span>
   );
 };

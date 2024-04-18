@@ -63,7 +63,7 @@ const VerseList = ({ initialVerses, pages, search }: VerseListProps) => {
 
   return (
     <div>
-      <div className="flex justify-center m-auto w-full lg:w-3/5">
+      <div className="flex justify-center m-auto w-full lg:w-3/5 my-6">
         <ChapterHeader chapterId={search.chapter_id} />
       </div>
       <Bismillah chapterId={search.chapter_id} />
