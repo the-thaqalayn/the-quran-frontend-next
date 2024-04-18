@@ -19,10 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={"bg-gray-50 dark:bg-gray-700 " + inter.className}>
         <Providers>
           <Header />
-          <main className="bg-gray-50 dark:bg-gray-700">
+          <main>
             <div className="container mx-auto min-h-screen">
               <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
             </div>
