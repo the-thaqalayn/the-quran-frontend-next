@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { use, useEffect } from "react";
 
 import {
   Navbar,
@@ -16,17 +16,22 @@ import {
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
+  Tooltip,
 } from "@nextui-org/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { ThemeSwitcher } from "../common/ThemeSwitcher";
 import { useTheme } from "next-themes";
-// import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faGear, faBookBookmark } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGear,
+  faBookBookmark,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const { theme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   const menuItems = [
     { title: "Home", href: "#" },
@@ -63,7 +68,54 @@ const Header = () => {
 
       <NavbarContent justify="end">
         <NavbarItem>
-          <Dropdown placement="bottom-end">
+          <ul className="flex flex-row list-none">
+            <li>
+              <Tooltip
+                placement="bottom"
+                color="foreground"
+                content="My Settings"
+                size="sm"
+              >
+                <FontAwesomeIcon
+                  icon={faGear}
+                  size="lg"
+                  className="cursor-pointer text-white dark:text-gray-200 me-3"
+                />
+              </Tooltip>
+            </li>
+            <li>
+              <Tooltip
+                placement="bottom"
+                color="foreground"
+                content="Search"
+                size="sm"
+              >
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlass}
+                  size="lg"
+                  className="cursor-pointer text-white dark:text-gray-200 me-3"
+                />
+              </Tooltip>
+            </li>
+            <li>
+              <Tooltip
+                placement="bottom"
+                color="foreground"
+                content="My Bookmarks"
+                size="sm"
+              >
+                <FontAwesomeIcon
+                  icon={faBookBookmark}
+                  size="lg"
+                  className="cursor-pointer text-white dark:text-gray-200 me-3"
+                />
+              </Tooltip>
+            </li>
+            <li>
+              <ThemeSwitcher />
+            </li>
+          </ul>
+          {/* <Dropdown placement="bottom-end">
             <DropdownTrigger>
               <FontAwesomeIcon
                 icon={faEllipsisVertical}
@@ -97,7 +149,7 @@ const Header = () => {
                 My Settings
               </DropdownItem>
             </DropdownMenu>
-          </Dropdown>
+          </Dropdown> */}
         </NavbarItem>
       </NavbarContent>
 
