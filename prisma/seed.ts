@@ -1,6 +1,7 @@
 import { PrismaClient, Verse } from "@prisma/client";
 import chapterFile from "./json-files/chapters.json";
 import verseFile from "./json-files/verses.json";
+import languageFile from "./json-files/languages.json";
 
 const prisma = new PrismaClient();
 //type ChapetrInput = Prisma.Args<typeof prisma.chapter, "createMany">["data"];
@@ -22,6 +23,9 @@ async function main() {
   });
   await prisma.verse.createMany({
     data: verseFile.verses,
+  });
+  await prisma.language.createMany({
+    data: languageFile.languages,
   });
 }
 main()
