@@ -45,4 +45,15 @@ model Language {
   native_name String
   direction String
   translations_count Int
+  
+  translations Translation[]
+}
+model Translation {
+  id Int @id
+  name String
+  author_name String
+  slug String?
+  language_id Int
+
+  language Language @relation(fields: [language_id],references: [id])
 }
