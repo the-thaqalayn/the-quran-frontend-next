@@ -38,3 +38,11 @@ model Verse {
   code_v1 String
   code_v2 String
 }
+model Language {
+  id Int @id
+  name String
+  iso_code String
+  native_name String
+  direction String
+  translations_count Int
+}
