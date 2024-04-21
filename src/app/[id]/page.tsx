@@ -14,17 +14,14 @@ const ChapterShowPage = async ({ params }: ChapterShowProps) => {
   const chapterId = parseInt(params.id);
   const search: Partial<Verse> = { chapter_id: chapterId };
   const pages = await getMinMaxPage(search);
-
+  const initialVerses = await getVersesByPage({
+    ...search,
+    page_number: pages[0],
+  });
+  console.log(JSON.stringify(initialVerses));
   return (
     <div>
-      <VerseList
-        initialVerses={await getVersesByPage({
-          ...search,
-          page_number: pages[0],
-        })}
-        search={search}
-        pages={pages}
-      />
+      <VerseList initialVerses={initialVerses} search={search} pages={pages} />
     </div>
   );
 };
