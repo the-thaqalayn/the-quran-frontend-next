@@ -8,20 +8,34 @@ interface ChapterShowProps {
   params: {
     id: string;
   };
+  searchParams: {
+    tid: string;
+  };
 }
 
-const ChapterShowPage = async ({ params }: ChapterShowProps) => {
+const ChapterShowPage = async ({ params, searchParams }: ChapterShowProps) => {
   const chapterId = parseInt(params.id);
+  const tid = parseInt(searchParams.tid);
   const search: Partial<Verse> = { chapter_id: chapterId };
   const pages = await getMinMaxPage(search);
-  const initialVerses = await getVersesByPage({
-    ...search,
-    page_number: pages[0],
-  });
+  // const tid = 135;
+  console.log(tid);
+  const initialVerses = await getVersesByPage(
+    {
+      ...search,
+      page_number: pages[0],
+    },
+    tid
+  );
   console.log(JSON.stringify(initialVerses));
   return (
     <div>
-      <VerseList initialVerses={initialVerses} search={search} pages={pages} />
+      <VerseList
+        initialVerses={initialVerses}
+        search={search}
+        pages={pages}
+        tid={tid}
+      />
     </div>
   );
 };

@@ -15,6 +15,7 @@ interface VerseListProps {
   search: Partial<Verse>;
   pages: [number, number];
   initialVerses: Verse[];
+  tid: number;
 }
 
 const renderVerses = (vs: Verse[]) => {
@@ -31,7 +32,7 @@ const DivLoading = styled.div<{ hidden: boolean }>`
   justify-content: center;
 `;
 
-const VerseList = ({ initialVerses, pages, search }: VerseListProps) => {
+const VerseList = ({ initialVerses, pages, search, tid }: VerseListProps) => {
   const [page, setPage] = useState(pages[0]);
   const [verses, setVerses] = useState(initialVerses);
 
@@ -42,7 +43,7 @@ const VerseList = ({ initialVerses, pages, search }: VerseListProps) => {
 
   const fetchMoreData = useCallback(async () => {
     console.log("Viewed:", page);
-    const result = await fetchVerses({ ...search, page_number: page });
+    const result = await fetchVerses({ ...search, page_number: page }, tid);
     console.log(result);
     if (result?.length) {
       setVerses((prev) => [...prev, ...result]);
