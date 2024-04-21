@@ -1,0 +1,2 @@
+/prisma/quran.db filter=lfs diff=lfs merge=lfs -text
+/prisma/json-files/** filter=lfs diff=lfs merge=lfs -text

@@ -37,6 +37,8 @@ model Verse {
   text_indopak String 
   code_v1 String
   code_v2 String
+
+  verseTranslation VerseTranslation[]
 }
 model Language {
   id Int @id
@@ -56,4 +58,15 @@ model Translation {
   language_id Int
 
   language Language @relation(fields: [language_id],references: [id])
+  verseTranslation VerseTranslation[]
+}
+model VerseTranslation{
+  resource_id Int
+  text String
+  verse_id Int
+
+  verse Verse @relation(fields: [verse_id],references: [id])
+  translation Translation @relation(fields: [resource_id],references: [id])
+
+   @@id([verse_id, resource_id])
 }

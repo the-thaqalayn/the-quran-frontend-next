@@ -4,8 +4,20 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ```sh
 npx prisma migrate dev
+export NODE_OPTIONS=--max-old-space-size=4096
 npx prisma db seed
 npx prisma studio
+```
+
+## Git Large File Storage (LFS)
+
+```sh
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt-get install git-lfs
+
+git lfs track "/prisma/quran.db"
+git lfs track "/prisma/json-files/**"
+git add .gitattributes
 ```
 
 ## Getting Started
