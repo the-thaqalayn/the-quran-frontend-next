@@ -4,7 +4,7 @@ import { select } from "@nextui-org/react";
 
 export const getVersesByPage = (
   v: Partial<Verse>,
-  tid: number = 135
+  tid: number
 ): Promise<Verse[]> => {
   return db.verse.findMany({
     where: {
