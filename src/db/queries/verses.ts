@@ -2,7 +2,10 @@ import type { Verse } from "@prisma/client";
 import { db } from "@/db";
 import { select } from "@nextui-org/react";
 
-export const getVersesByPage = (v: Partial<Verse>): Promise<Verse[]> => {
+export const getVersesByPage = (
+  v: Partial<Verse>,
+  tid: number = 135
+): Promise<Verse[]> => {
   return db.verse.findMany({
     where: {
       AND: [
@@ -33,6 +36,12 @@ export const getVersesByPage = (v: Partial<Verse>): Promise<Verse[]> => {
           ...(v.verse_key ? { verse_key: v.verse_key } : {}),
         },
       ],
+    },
+    include: {
+      verseTranslation: {
+        where: { resource_id: { equals: tid } },
+        select: { text: true },
+      },
     },
     orderBy: {
       id: "asc",
