@@ -16,13 +16,14 @@ interface VerseListProps {
   pages: [number, number];
   initialVerses: Verse[];
   tid: number | undefined;
+  direction: string | undefined;
 }
 
-const renderVerses = (vs: Verse[]) => {
+const renderVerses = (vs: Verse[], direction: string | undefined) => {
   return vs.map((v) => {
     return (
       <div>
-        <VerseListCard key={v.id} verse={v} />
+        <VerseListCard key={v.id} verse={v} direction={direction} />
       </div>
     );
   });
@@ -32,7 +33,13 @@ const DivLoading = styled.div<{ hidden: boolean }>`
   justify-content: center;
 `;
 
-const VerseList = ({ initialVerses, pages, search, tid }: VerseListProps) => {
+const VerseList = ({
+  initialVerses,
+  pages,
+  search,
+  tid,
+  direction,
+}: VerseListProps) => {
   const [page, setPage] = useState(pages[0]);
   const [verses, setVerses] = useState(initialVerses);
 
@@ -68,7 +75,7 @@ const VerseList = ({ initialVerses, pages, search, tid }: VerseListProps) => {
         <ChapterHeader chapterId={search.chapter_id} />
       </div>
       <Bismillah chapterId={search.chapter_id} />
-      {renderVerses(verses)}
+      {renderVerses(verses, direction)}
       <DivLoading ref={ref} hidden={page >= pages[1]} key="loader">
         Loading ...
       </DivLoading>

@@ -1,7 +1,21 @@
-import type { Verse } from "@prisma/client";
+import type { Verse, Translation } from "@prisma/client";
 import { db } from "@/db";
 import { select } from "@nextui-org/react";
 
+export const getDirection = async (tid: number | undefined) => {
+  if (tid === undefined) return null;
+
+  return await db.translation.findFirst({
+    where: { id: { equals: tid } },
+    select: {
+      language: {
+        select: {
+          direction: true,
+        },
+      },
+    },
+  });
+};
 export const getVersesByPage = (
   v: Partial<Verse>,
   tid: number | undefined

@@ -1,7 +1,11 @@
 "use server";
 
 import VerseList from "@/components/verse/VerseList";
-import { getMinMaxPage, getVersesByPage } from "@/db/queries/verses";
+import {
+  getDirection,
+  getMinMaxPage,
+  getVersesByPage,
+} from "@/db/queries/verses";
 import { Verse } from "@prisma/client";
 
 interface ChapterShowProps {
@@ -29,6 +33,8 @@ const ChapterShowPage = async ({ params, searchParams }: ChapterShowProps) => {
     },
     tid
   );
+  const translation = await getDirection(tid);
+
   console.log(JSON.stringify(initialVerses));
   return (
     <div>
@@ -37,6 +43,7 @@ const ChapterShowPage = async ({ params, searchParams }: ChapterShowProps) => {
         search={search}
         pages={pages}
         tid={tid}
+        direction={translation?.language.direction}
       />
     </div>
   );
