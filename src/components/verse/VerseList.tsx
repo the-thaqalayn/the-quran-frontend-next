@@ -15,7 +15,7 @@ interface VerseListProps {
   search: Partial<Verse>;
   pages: [number, number];
   initialVerses: Verse[];
-  tid: number;
+  tid: number | undefined;
 }
 
 const renderVerses = (vs: Verse[]) => {
