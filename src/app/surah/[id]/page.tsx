@@ -9,17 +9,19 @@ interface ChapterShowProps {
     id: string;
   };
   searchParams: {
-    tid: string;
+    translation: string;
   };
 }
 
 const ChapterShowPage = async ({ params, searchParams }: ChapterShowProps) => {
   const chapterId = parseInt(params.id);
-  const tid = parseInt(searchParams.tid ?? 135);
+  const tid = searchParams.translation
+    ? parseInt(searchParams.translation)
+    : undefined;
   const search: Partial<Verse> = { chapter_id: chapterId };
   const pages = await getMinMaxPage(search);
   // const tid = 135;
-  console.log(tid);
+  // console.log(tid);
   const initialVerses = await getVersesByPage(
     {
       ...search,

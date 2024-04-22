@@ -15,7 +15,12 @@ const ChapterListCard = ({
   versesCount,
 }: ChapterListCardProps) => {
   return (
-    <Link key={id} href={`/${id}`} target="_blank" className="group">
+    <Link
+      key={id}
+      href={`surah/${id}?translation=135`}
+      target="_blank"
+      className="group"
+    >
       <div className="flex bg-white dark:bg-gray-600  group-hover:border-cyan-600 dark:group-hover:border-gray-50 group-hover:bg-gray-100 dark:group-hover:bg-sky-900  w-full  flex-row align-middle justify-between border border-solid border-gray-200 rounded cursor-pointer p-4">
         <div className="flex flex-row align-middle">
           <div className="flex rounded  group-hover:bg-cyan-600 group-hover:text-white bg-gray-100 dark:bg-cyan-800 align-middle justify-center rotate-45 border border-solid round me-5  w-10 h-10">

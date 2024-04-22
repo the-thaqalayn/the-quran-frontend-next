@@ -6,7 +6,7 @@ import { Chapter, Verse } from "@prisma/client";
 
 export const fetchVerses = async (
   search: Partial<Verse>,
-  tid: number
+  tid: number | undefined
 ): Promise<Verse[]> => {
   return await getVersesByPage(search, tid);
 };

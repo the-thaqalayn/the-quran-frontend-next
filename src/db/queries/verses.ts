@@ -4,49 +4,87 @@ import { select } from "@nextui-org/react";
 
 export const getVersesByPage = (
   v: Partial<Verse>,
-  tid: number
+  tid: number | undefined
 ): Promise<Verse[]> => {
-  return db.verse.findMany({
-    where: {
-      AND: [
-        {
-          ...(v.juz_number ? { juz_number: v.juz_number } : {}),
-        },
-        {
-          ...(v.hizb_number ? { hizb_number: v.hizb_number } : {}),
-        },
-        {
-          ...(v.rub_el_hizb_number
-            ? { rub_el_hizb_number: v.rub_el_hizb_number }
-            : {}),
-        },
-        {
-          ...(v.ruku_number ? { ruku_number: v.ruku_number } : {}),
-        },
-        {
-          ...(v.manzil_number ? { manzil_number: v.manzil_number } : {}),
-        },
-        {
-          ...(v.chapter_id ? { chapter_id: v.chapter_id } : {}),
-        },
-        {
-          ...(v.page_number ? { page_number: v.page_number } : {}),
-        },
-        {
-          ...(v.verse_key ? { verse_key: v.verse_key } : {}),
-        },
-      ],
-    },
-    include: {
-      verseTranslation: {
-        where: { resource_id: { equals: tid } },
-        select: { text: true },
+  if (tid) {
+    return db.verse.findMany({
+      where: {
+        AND: [
+          {
+            ...(v.juz_number ? { juz_number: v.juz_number } : {}),
+          },
+          {
+            ...(v.hizb_number ? { hizb_number: v.hizb_number } : {}),
+          },
+          {
+            ...(v.rub_el_hizb_number
+              ? { rub_el_hizb_number: v.rub_el_hizb_number }
+              : {}),
+          },
+          {
+            ...(v.ruku_number ? { ruku_number: v.ruku_number } : {}),
+          },
+          {
+            ...(v.manzil_number ? { manzil_number: v.manzil_number } : {}),
+          },
+          {
+            ...(v.chapter_id ? { chapter_id: v.chapter_id } : {}),
+          },
+          {
+            ...(v.page_number ? { page_number: v.page_number } : {}),
+          },
+          {
+            ...(v.verse_key ? { verse_key: v.verse_key } : {}),
+          },
+        ],
       },
-    },
-    orderBy: {
-      id: "asc",
-    },
-  });
+      include: {
+        verseTranslation: {
+          where: { resource_id: { equals: tid } },
+          select: { text: true },
+        },
+      },
+      orderBy: {
+        id: "asc",
+      },
+    });
+  } else {
+    return db.verse.findMany({
+      where: {
+        AND: [
+          {
+            ...(v.juz_number ? { juz_number: v.juz_number } : {}),
+          },
+          {
+            ...(v.hizb_number ? { hizb_number: v.hizb_number } : {}),
+          },
+          {
+            ...(v.rub_el_hizb_number
+              ? { rub_el_hizb_number: v.rub_el_hizb_number }
+              : {}),
+          },
+          {
+            ...(v.ruku_number ? { ruku_number: v.ruku_number } : {}),
+          },
+          {
+            ...(v.manzil_number ? { manzil_number: v.manzil_number } : {}),
+          },
+          {
+            ...(v.chapter_id ? { chapter_id: v.chapter_id } : {}),
+          },
+          {
+            ...(v.page_number ? { page_number: v.page_number } : {}),
+          },
+          {
+            ...(v.verse_key ? { verse_key: v.verse_key } : {}),
+          },
+        ],
+      },
+      orderBy: {
+        id: "asc",
+      },
+    });
+  }
 };
 
 export const getMinMaxPage = async (
