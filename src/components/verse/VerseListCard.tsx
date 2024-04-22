@@ -19,6 +19,7 @@ import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 interface VerseListCardProps {
   verse: Verse;
+  direction: string | undefined;
 }
 
 const TextArabic = styled.p<{ page: number }>`
@@ -26,9 +27,12 @@ const TextArabic = styled.p<{ page: number }>`
   line-height: 4rem;
 `;
 
-export default function VerseListCard({ verse }: VerseListCardProps) {
+export default function VerseListCard({
+  verse,
+  direction,
+}: VerseListCardProps) {
   const { verse_key, page_number, code_v1 } = verse;
-
+  console.log("direction:", direction);
   return (
     <Card className="w-full p-4 my-3  dark:bg-gray-600 ">
       <CardHeader className="justify-between ">
