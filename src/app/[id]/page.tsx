@@ -15,7 +15,7 @@ interface ChapterShowProps {
 
 const ChapterShowPage = async ({ params, searchParams }: ChapterShowProps) => {
   const chapterId = parseInt(params.id);
-  const tid = parseInt(searchParams.tid);
+  const tid = parseInt(searchParams.tid ?? 135);
   const search: Partial<Verse> = { chapter_id: chapterId };
   const pages = await getMinMaxPage(search);
   // const tid = 135;
