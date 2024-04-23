@@ -1,7 +1,10 @@
-import type { Verse, Translation } from "@prisma/client";
+import type { Verse, Translation, VerseTranslation } from "@prisma/client";
 import { db } from "@/db";
 import { select } from "@nextui-org/react";
 
+export type VersWitnTranslation = Verse & {
+  verseTranslation?: { text: string }[];
+};
 export const getDirection = async (tid: number | undefined) => {
   if (tid === undefined) return null;
 
@@ -19,7 +22,7 @@ export const getDirection = async (tid: number | undefined) => {
 export const getVersesByPage = (
   v: Partial<Verse>,
   tid: number | undefined
-): Promise<Verse[]> => {
+): Promise<VersWitnTranslation[]> => {
   if (tid) {
     return db.verse.findMany({
       where: {
