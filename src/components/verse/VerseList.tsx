@@ -10,9 +10,10 @@ import { useFont } from "@/app/utils/hooks/usefont";
 import { loadFontFace } from "@/app/utils/fontFaceHelper";
 import Bismillah from "@/components/bismillah/Bismillah";
 import ChapterHeader from "../header/ChapterHeader";
+import { VersWitnTranslation } from "@/db/queries/verses";
 
 interface VerseListProps {
-  search: Partial<Verse>;
+  search: Partial<VersWitnTranslation>;
   pages: [number, number];
   initialVerses: Verse[];
   tid: number | undefined;
