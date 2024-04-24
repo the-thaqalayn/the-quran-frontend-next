@@ -21,3 +21,52 @@ model Chapter {
   pages String
   translated_name String
 }
+model Verse {
+  id Int @id
+  chapter_id Int
+  verse_number Int
+  verse_key String
+  page_number Int
+  juz_number Int
+  hizb_number Int
+  rub_el_hizb_number Int
+  ruku_number Int
+  manzil_number Int
+  sajdah_number Int?
+  text_uthmani String
+  text_indopak String 
+  code_v1 String
+  code_v2 String
+
+  verseTranslation VerseTranslation[]
+}
+model Language {
+  id Int @id
+  name String
+  iso_code String
+  native_name String
+  direction String
+  translations_count Int
+  
+  translations Translation[]
+}
+model Translation {
+  id Int @id
+  name String
+  author_name String
+  slug String?
+  language_id Int
+
+  language Language @relation(fields: [language_id],references: [id])
+  verseTranslation VerseTranslation[]
+}
+model VerseTranslation{
+  resource_id Int
+  text String
+  verse_id Int
+
+  verse Verse @relation(fields: [verse_id],references: [id])
+  translation Translation @relation(fields: [resource_id],references: [id])
+
+   @@id([verse_id, resource_id])
+}

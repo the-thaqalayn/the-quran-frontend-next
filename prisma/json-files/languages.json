@@ -1,0 +1,572 @@
+{
+  "languages": [
+    {
+      "id": 38,
+      "name": "English",
+      "iso_code": "en",
+      "native_name": "English",
+      "direction": "ltr",
+      "translations_count": 19
+    },
+    {
+      "id": 174,
+      "name": "Urdu",
+      "iso_code": "ur",
+      "native_name": "اردو",
+      "direction": "rtl",
+      "translations_count": 9
+    },
+    {
+      "id": 20,
+      "name": "Bengali",
+      "iso_code": "bn",
+      "native_name": "বাংলা",
+      "direction": "ltr",
+      "translations_count": 7
+    },
+    {
+      "id": 167,
+      "name": "Turkish",
+      "iso_code": "tr",
+      "native_name": "Türkçe",
+      "direction": "ltr",
+      "translations_count": 6
+    },
+    {
+      "id": 40,
+      "name": "Spanish",
+      "iso_code": "es",
+      "native_name": "Español",
+      "direction": "ltr",
+      "translations_count": 5
+    },
+    {
+      "id": 49,
+      "name": "French",
+      "iso_code": "fr",
+      "native_name": "Français",
+      "direction": "ltr",
+      "translations_count": 4
+    },
+    {
+      "id": 23,
+      "name": "Bosnian",
+      "iso_code": "bs",
+      "native_name": "Bosanski",
+      "direction": "ltr",
+      "translations_count": 4
+    },
+    {
+      "id": 138,
+      "name": "Russian",
+      "iso_code": "ru",
+      "native_name": "Русский",
+      "direction": "ltr",
+      "translations_count": 4
+    },
+    {
+      "id": 106,
+      "name": "Malayalam",
+      "iso_code": "ml",
+      "native_name": "മലയാളം",
+      "direction": "ltr",
+      "translations_count": 4
+    },
+    {
+      "id": 67,
+      "name": "Indonesian",
+      "iso_code": "id",
+      "native_name": "Bahasa Indonesia",
+      "direction": "ltr",
+      "translations_count": 3
+    },
+    {
+      "id": 175,
+      "name": "Uzbek",
+      "iso_code": "uz",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 3
+    },
+    {
+      "id": 118,
+      "name": "Dutch",
+      "iso_code": "nl",
+      "native_name": "Nederlands",
+      "direction": "ltr",
+      "translations_count": 3
+    },
+    {
+      "id": 33,
+      "name": "German",
+      "iso_code": "de",
+      "native_name": "Deutsch",
+      "direction": "ltr",
+      "translations_count": 3
+    },
+    {
+      "id": 160,
+      "name": "Tajik",
+      "iso_code": "tg",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 3
+    },
+    {
+      "id": 158,
+      "name": "Tamil",
+      "iso_code": "ta",
+      "native_name": "தமிழ்",
+      "direction": "ltr",
+      "translations_count": 3
+    },
+    {
+      "id": 76,
+      "name": "Japanese",
+      "iso_code": "ja",
+      "native_name": "日本語",
+      "direction": "ltr",
+      "translations_count": 3
+    },
+    {
+      "id": 74,
+      "name": "Italian",
+      "iso_code": "it",
+      "native_name": "Italiano",
+      "direction": "ltr",
+      "translations_count": 3
+    },
+    {
+      "id": 177,
+      "name": "Vietnamese",
+      "iso_code": "vi",
+      "native_name": "Tiếng Việt",
+      "direction": "ltr",
+      "translations_count": 3
+    },
+    {
+      "id": 185,
+      "name": "Chinese",
+      "iso_code": "zh",
+      "native_name": "中文",
+      "direction": "ltr",
+      "translations_count": 3
+    },
+    {
+      "id": 187,
+      "name": "Albanian",
+      "iso_code": "sq",
+      "native_name": "Shqip",
+      "direction": "ltr",
+      "translations_count": 3
+    },
+    {
+      "id": 43,
+      "name": "Persian",
+      "iso_code": "fa",
+      "native_name": "فارسی",
+      "direction": "rtl",
+      "translations_count": 2
+    },
+    {
+      "id": 16,
+      "name": "Bulgarian",
+      "iso_code": "bg",
+      "native_name": "Български",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 19,
+      "name": "Bambara",
+      "iso_code": "bm",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 58,
+      "name": "Hausa",
+      "iso_code": "ha",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 133,
+      "name": "Portuguese",
+      "iso_code": "pt",
+      "native_name": "Português",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 137,
+      "name": "Romanian",
+      "iso_code": "ro",
+      "native_name": "Română",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 60,
+      "name": "Hindi",
+      "iso_code": "hi",
+      "native_name": "हिन्दी",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 157,
+      "name": "Swahili",
+      "iso_code": "sw",
+      "native_name": "Kiswahili",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 82,
+      "name": "Kazakh",
+      "iso_code": "kk",
+      "native_name": "Қазақ",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 161,
+      "name": "Thai",
+      "iso_code": "th",
+      "native_name": "ภาษาไทย",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 164,
+      "name": "Tagalog",
+      "iso_code": "tl",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 84,
+      "name": "Central Khmer",
+      "iso_code": "km",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 10,
+      "name": "Assamese",
+      "iso_code": "as",
+      "native_name": "অসমীয়া",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 86,
+      "name": "Korean",
+      "iso_code": "ko",
+      "native_name": "한국어",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 150,
+      "name": "Somali",
+      "iso_code": "so",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 13,
+      "name": "Azeri",
+      "iso_code": "az",
+      "native_name": "Azərbaycan dili",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 89,
+      "name": "Kurdish",
+      "iso_code": "ku",
+      "native_name": "Kurdî",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 34,
+      "name": "Divehi, Dhivehi, Maldivian",
+      "iso_code": "dv",
+      "native_name": "ދިވެހި",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 110,
+      "name": "Malay",
+      "iso_code": "ms",
+      "native_name": "Bahasa Melayu",
+      "direction": "ltr",
+      "translations_count": 2
+    },
+    {
+      "id": 190,
+      "name": "Dari",
+      "iso_code": "prs",
+      "native_name": "دری",
+      "direction": "rtl",
+      "translations_count": 1
+    },
+    {
+      "id": 188,
+      "name": "Amazigh",
+      "iso_code": "zgh",
+      "native_name": "Tamaziɣt",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 6,
+      "name": "Amharic",
+      "iso_code": "am",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 25,
+      "name": "Chechen",
+      "iso_code": "ce",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 29,
+      "name": "Czech",
+      "iso_code": "cs",
+      "native_name": "Čeština",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 45,
+      "name": "Finnish",
+      "iso_code": "fi",
+      "native_name": "Suomi",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 56,
+      "name": "Gujarati",
+      "iso_code": "gu",
+      "native_name": "ગુજરાતી",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 59,
+      "name": "Hebrew",
+      "iso_code": "he",
+      "native_name": "עברית",
+      "direction": "rtl",
+      "translations_count": 1
+    },
+    {
+      "id": 78,
+      "name": "Georgian",
+      "iso_code": "ka",
+      "native_name": "ქართული",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 85,
+      "name": "Kannada",
+      "iso_code": "kn",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 88,
+      "name": "Kashmiri",
+      "iso_code": "ks",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 95,
+      "name": "Ganda",
+      "iso_code": "lg",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 105,
+      "name": "Macedonian",
+      "iso_code": "mk",
+      "native_name": "Македонски",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 108,
+      "name": "Marathi",
+      "iso_code": "mr",
+      "native_name": "मराठी",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 109,
+      "name": "Maranao",
+      "iso_code": "mrn",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 116,
+      "name": "Nepali",
+      "iso_code": "ne",
+      "native_name": "नेपाली",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 120,
+      "name": "Norwegian",
+      "iso_code": "no",
+      "native_name": "Norsk",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 126,
+      "name": "Oromo",
+      "iso_code": "om",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 131,
+      "name": "Polish",
+      "iso_code": "pl",
+      "native_name": "Polski",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 132,
+      "name": "Pashto",
+      "iso_code": "ps",
+      "native_name": "پښتو",
+      "direction": "rtl",
+      "translations_count": 1
+    },
+    {
+      "id": 139,
+      "name": "Kinyarwanda",
+      "iso_code": "rw",
+      "native_name": "Ikinyarwanda",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 142,
+      "name": "Sindhi",
+      "iso_code": "sd",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 143,
+      "name": "Northern Sami",
+      "iso_code": "se",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 145,
+      "name": "Sinhala, Sinhalese",
+      "iso_code": "si",
+      "native_name": "සිංහල",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 152,
+      "name": "Serbian",
+      "iso_code": "sr",
+      "native_name": "Српски",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 156,
+      "name": "Swedish",
+      "iso_code": "sv",
+      "native_name": "Svenska",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 159,
+      "name": "Telugu",
+      "iso_code": "te",
+      "native_name": "తెలుగు",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 169,
+      "name": "Tatar",
+      "iso_code": "tt",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 172,
+      "name": "Uighur, Uyghur",
+      "iso_code": "ug",
+      "native_name": "",
+      "direction": "rtl",
+      "translations_count": 1
+    },
+    {
+      "id": 173,
+      "name": "Ukrainian",
+      "iso_code": "uk",
+      "native_name": "Українська",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 151,
+      "name": "Albanian",
+      "iso_code": "sq",
+      "native_name": "Shqip",
+      "direction": "ltr",
+      "translations_count": 1
+    },
+    {
+      "id": 183,
+      "name": "Yoruba",
+      "iso_code": "yo",
+      "native_name": "",
+      "direction": "ltr",
+      "translations_count": 1
+    }
+  ]
+}

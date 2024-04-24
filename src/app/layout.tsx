@@ -2,8 +2,14 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/common/Providers";
-import Header from "@/components/header/Header";
+// import Header from "@/components/header/Header";
+import StyledComponentsRegistry from "@/lib/registry";
 
+import dynamic from "next/dynamic";
+
+const Header = dynamic(() => import("@/components/header/Header"), {
+  ssr: false,
+});
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,11 +24,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={"bg-gray-50 dark:bg-gray-700 " + inter.className}>
         <Providers>
           <Header />
-          <main className="bg-gray-50">
-            <div className="container mx-auto min-h-screen">{children}</div>
+          <main>
+            <div className="container mx-auto min-h-screen">
+              <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+            </div>
           </main>
         </Providers>
       </body>

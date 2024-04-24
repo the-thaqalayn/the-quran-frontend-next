@@ -1,12 +1,12 @@
 "use server";
 
-import SurahList from "@/components/surah/SurahList";
-import { fetchChapters } from "@/db/queries/chapers";
+import ChapterList from "@/components/chapter/ChapterList";
+import { getChapters } from "@/db/queries/chapers";
 
 const Home = async ({}) => {
   return (
     <div className="my-8">
-      <SurahList fechData={fetchChapters} />
+      <ChapterList fechData={getChapters} />
     </div>
   );
 };
