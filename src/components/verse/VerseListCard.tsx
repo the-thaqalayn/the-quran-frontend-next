@@ -12,7 +12,6 @@ import {
 } from "@nextui-org/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
-import { useFont } from "@/app/utils/hooks/usefont";
 import type { Verse } from "@prisma/client";
 import { faBookmark, faCopy } from "@fortawesome/free-regular-svg-icons";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
