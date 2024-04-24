@@ -6,8 +6,8 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { fetchVerses } from "@/actions";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
-import { useFont } from "@/app/utils/hooks/usefont";
-import { loadFontFace } from "@/app/utils/fontFaceHelper";
+import { useFont } from "@/app/utils/hooks/useFont";
+// import { loadFontFaceV } from "@/app/utils/fontFaceHelper";
 import Bismillah from "@/components/bismillah/Bismillah";
 import ChapterHeader from "../header/ChapterHeader";
 import { VersWitnTranslation } from "@/db/queries/verses";
@@ -45,7 +45,7 @@ const VerseList = ({
   const [verses, setVerses] = useState(initialVerses);
 
   const [ref, inView] = useInView();
-  const loadedFonts = useFont(page, false);
+  const loadedFonts = useFont(`${page}-v1`);
 
   // console.log("fonts:", JSON.stringify(loadedFonts));
 
