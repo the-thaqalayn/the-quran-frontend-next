@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   Card,
   CardHeader,
@@ -17,13 +17,14 @@ import { faBookmark, faCopy } from "@fortawesome/free-regular-svg-icons";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import { VersWitnTranslation } from "@/db/queries/verses";
+import { SettingContext } from "../common/SettingProvider";
+import { ArabicTextFont, getArabicTextFont } from "@/app/utils/fonts";
 interface VerseListCardProps {
   verse: VersWitnTranslation;
   direction: string | undefined;
 }
 
-const TextArabic = styled.p<{ page: number }>`
-  font-family: ${(props) => "p" + props.page};
+const TextArabic = styled.p`
   line-height: 4rem;
 `;
 const TextTranslation = styled.p<{ dir: string | undefined }>`
@@ -35,7 +36,10 @@ export default function VerseListCard({
   verse,
   direction,
 }: VerseListCardProps) {
-  const { verse_key, page_number, code_v1, verseTranslation } = verse;
+  const { setArabicFont } = useContext(SettingContext);
+
+  setArabicFont(() => getArabicTextFont(ArabicTextFont.Amiri));
+  const { verse_key, page_number, text_uthmani, verseTranslation } = verse;
   console.log("direction:", direction);
 
   const renderedTranslation = verse.verseTranslation ? (
@@ -61,9 +65,9 @@ export default function VerseListCard({
         </div>
       </CardHeader>
       <CardBody className="px-8 py-4 ">
-        <div className="text-end text-4xl text-cyan-900 break-all">
-          <TextArabic page={page_number} className="dark:text-cyan-500">
-            {code_v1}
+        <div className="text-end text-4xl text-cyan-900 break-words">
+          <TextArabic className="dark:text-cyan-500 font-textArabic">
+            {text_uthmani}
           </TextArabic>
         </div>
         {renderedTranslation}
