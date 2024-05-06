@@ -15,6 +15,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         surah: ['"surahnames"'],
+        textArabic: ["var(--font-text-arabic)"],
       },
     },
   },

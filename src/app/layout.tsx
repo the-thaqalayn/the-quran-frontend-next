@@ -6,6 +6,7 @@ import Providers from "@/components/common/Providers";
 import StyledComponentsRegistry from "@/lib/registry";
 
 import dynamic from "next/dynamic";
+import { getArabicTextFont, ArabicTextFont } from "@/app/utils/fonts";
 
 const Header = dynamic(() => import("@/components/header/Header"), {
   ssr: false,
@@ -24,16 +25,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={"bg-gray-50 dark:bg-gray-700 " + inter.className}>
-        <Providers>
-          <Header />
-          <main>
-            <div className="container mx-auto min-h-screen">
-              <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-            </div>
-          </main>
-        </Providers>
-      </body>
+      <Providers>
+        <Header />
+        <main>
+          <div className="container mx-auto min-h-screen">
+            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          </div>
+        </main>
+      </Providers>
     </html>
   );
 }
