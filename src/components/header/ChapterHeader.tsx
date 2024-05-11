@@ -45,8 +45,8 @@ const ChapterHeader = ({ chapterId }: ChapterHeaderProps) => {
       </div>
 
       <div className="flex flex-col text-center w-1/3 dark:text-gray-50">
-        <div className="font-surah text-3xl text-cyan-600">
-          {chapter?.id.toString().padStart(3, "0")}
+        <div className="font-textArabic text-3xl text-cyan-600">
+          {chapter?.name_arabic}
         </div>
         <div className="font-sans font-bold text-[0.7rem] text-gray-500 dark:text-gray-300  ">
           {chapter?.verses_count} Ayahs
