@@ -18,7 +18,7 @@ import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import { VersWitnTranslation } from "@/db/queries/verses";
 import { SettingContext } from "../common/SettingProvider";
-import { ArabicTextFont, getArabicTextFont } from "@/app/utils/fonts";
+import { ArabicTextFont, getArabicTextFont } from "@/app/utils/arabicFonts";
 interface VerseListCardProps {
   verse: VersWitnTranslation;
   direction: string | undefined;
