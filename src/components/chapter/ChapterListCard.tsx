@@ -3,6 +3,7 @@
 import Link from "next/link";
 interface ChapterListCardProps {
   id: number;
+  nameArabic: string;
   simpleName: string;
   translatedName: string;
   versesCount: number;
@@ -10,6 +11,7 @@ interface ChapterListCardProps {
 
 const ChapterListCard = ({
   id,
+  nameArabic,
   simpleName,
   translatedName,
   versesCount,
@@ -37,9 +39,7 @@ const ChapterListCard = ({
         </div>
 
         <div className="flex flex-col text-center dark:text-gray-50">
-          <div className="font-surah text-xl">
-            {id.toString().padStart(3, "0")}
-          </div>
+          <div className="text-xl font-textArabic">{nameArabic}</div>
           <div className="font-sans font-bold text-[0.7rem] text-gray-500 dark:text-gray-300  group-hover:text-cyan-600 dark:group-hover:text-cyan-400">
             {versesCount} Ayahs
           </div>

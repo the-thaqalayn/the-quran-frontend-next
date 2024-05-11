@@ -12,6 +12,7 @@ const ChapterList = async ({ fechData }: ChapterListProps) => {
     <ChapterListCard
       key={c.id}
       id={c.id}
+      nameArabic={c.name_arabic}
       simpleName={c.name_simple}
       translatedName={c.translated_name}
       versesCount={c.verses_count}
