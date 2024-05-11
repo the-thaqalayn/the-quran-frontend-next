@@ -1,5 +1,5 @@
 "use client";
-import { ArabicTextFont, getArabicTextFont } from "@/app/utils/fonts";
+import { ArabicTextFont, getArabicTextFont } from "@/app/utils/arabicFonts";
 
 import { Dispatch, SetStateAction, createContext, useState } from "react";
 
