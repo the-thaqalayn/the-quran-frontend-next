@@ -19,6 +19,10 @@ import styled from "styled-components";
 import { VersWitnTranslation } from "@/db/queries/verses";
 import { SettingContext } from "../common/SettingProvider";
 import { ArabicTextFont, getArabicTextFont } from "@/app/utils/arabicFonts";
+import {
+  TranslationTextFont,
+  getTranslationTextFont,
+} from "@/app/utils/translationFonts";
 interface VerseListCardProps {
   verse: VersWitnTranslation;
   direction: string | undefined;
@@ -36,15 +40,19 @@ export default function VerseListCard({
   verse,
   direction,
 }: VerseListCardProps) {
-  const { setArabicFont } = useContext(SettingContext);
+  const { setArabicFont, setTranslationFont } = useContext(SettingContext);
 
   setArabicFont(() => getArabicTextFont(ArabicTextFont.Amiri));
+  setTranslationFont(() => getTranslationTextFont(TranslationTextFont.Katibeh));
   const { verse_key, page_number, text_uthmani, verseTranslation } = verse;
   console.log("direction:", direction);
 
   const renderedTranslation = verse.verseTranslation ? (
     <div className="text-end text-xl text-gray-600 break-words">
-      <TextTranslation dir={direction} className="dark:text-gray-300">
+      <TextTranslation
+        dir={direction}
+        className="dark:text-gray-300 font-texttranslation"
+      >
         {verse.verseTranslation[0].text}
       </TextTranslation>
     </div>
