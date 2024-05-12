@@ -6,7 +6,6 @@ import Providers from "@/components/common/Providers";
 import StyledComponentsRegistry from "@/lib/registry";
 
 import dynamic from "next/dynamic";
-import { getArabicTextFont, ArabicTextFont } from "@/app/utils/arabicFonts";
 
 const Header = dynamic(() => import("@/components/header/Header"), {
   ssr: false,
