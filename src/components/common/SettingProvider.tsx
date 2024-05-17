@@ -36,13 +36,7 @@ const SettingProvider = ({ children }: SettingProviderProps) => {
     <SettingContext.Provider
       value={{ arabicFont, setArabicFont, translationFont, setTranslationFont }}
     >
-      <body
-        className={
-          "bg-gray-50 dark:bg-gray-700 " +
-          `${arabicFont} ` +
-          `${translationFont} `
-        }
-      >
+      <body className={"bg-gray-50 dark:bg-gray-700" + ` ${arabicFont}`}>
         {children}
       </body>
     </SettingContext.Provider>
