@@ -40,18 +40,23 @@ export default function VerseListCard({
   verse,
   direction,
 }: VerseListCardProps) {
-  const { setArabicFont, setTranslationFont } = useContext(SettingContext);
-
+  const { arabicFont, setArabicFont, translationFont, setTranslationFont } =
+    useContext(SettingContext);
+  // ` ${arabicFont} ${translationFont}`
   setArabicFont(() => getArabicTextFont(ArabicTextFont.Amiri));
   setTranslationFont(() => getTranslationTextFont(TranslationTextFont.Katibeh));
   const { verse_key, page_number, text_uthmani, verseTranslation } = verse;
   console.log("direction:", direction);
 
   const renderedTranslation = verse.verseTranslation ? (
-    <div className="text-end text-xl text-gray-600 break-words">
+    <div
+      className={
+        "text-end text-xl text-gray-600 break-words" + ` ${translationFont}`
+      }
+    >
       <TextTranslation
         dir={direction}
-        className="dark:text-gray-300 font-texttranslation"
+        className="dark:text-gray-300 font-textTranslation"
       >
         {verse.verseTranslation[0].text}
       </TextTranslation>

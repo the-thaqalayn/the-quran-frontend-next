@@ -14,8 +14,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        textArabic: ["var(--font-text-arabic)"],
-        texttranslation: ["var(--font-text-translation)"],
+        textArabic: "var(--font-text-arabic)",
+        textTranslation: "var(--font-text-translation)",
       },
     },
   },
