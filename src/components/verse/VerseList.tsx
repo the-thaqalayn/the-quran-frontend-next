@@ -65,7 +65,7 @@ const VerseList = ({
   }, [inView]);
 
   useEffect(() => {
-    if (page > pages[0] && page < pages[1]) {
+    if (page > pages[0] && page <= pages[1]) {
       fetchMoreData();
     }
   }, [page]);
