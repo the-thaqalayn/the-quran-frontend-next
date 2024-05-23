@@ -53,6 +53,11 @@ export const getVersesByPage = (
           {
             ...(v.verse_key ? { verse_key: v.verse_key } : {}),
           },
+          {
+            ...(v.verse_number
+              ? { verse_number: { gte: v.verse_number } }
+              : {}),
+          },
         ],
       },
       include: {
@@ -95,6 +100,11 @@ export const getVersesByPage = (
           {
             ...(v.verse_key ? { verse_key: v.verse_key } : {}),
           },
+          {
+            ...(v.verse_number
+              ? { verse_number: { gte: v.verse_number } }
+              : {}),
+          },
         ],
       },
       orderBy: {
@@ -135,6 +145,9 @@ export const getMinMaxPage = async (
         },
         {
           ...(v.verse_key ? { verse_key: v.verse_key } : {}),
+        },
+        {
+          ...(v.verse_number ? { verse_number: { gte: v.verse_number } } : {}),
         },
       ],
     },

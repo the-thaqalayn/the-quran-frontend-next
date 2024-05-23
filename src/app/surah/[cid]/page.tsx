@@ -10,7 +10,7 @@ import { Verse } from "@prisma/client";
 
 interface ChapterShowProps {
   params: {
-    id: string;
+    cid: string;
   };
   searchParams: {
     translation: string;
@@ -18,7 +18,7 @@ interface ChapterShowProps {
 }
 
 const ChapterShowPage = async ({ params, searchParams }: ChapterShowProps) => {
-  const chapterId = parseInt(params.id);
+  const chapterId = parseInt(params.cid);
   const tid = searchParams.translation
     ? parseInt(searchParams.translation)
     : undefined;
