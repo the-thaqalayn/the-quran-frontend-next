@@ -52,7 +52,7 @@ const VerseList = ({
   const fetchMoreData = useCallback(async () => {
     console.log("Viewed:", page);
     const result = await fetchVerses({ ...search, page_number: page }, tid);
-    console.log(result);
+    // console.log(result);
     if (result?.length) {
       setVerses((prev) => [...prev, ...result]);
     }
@@ -75,7 +75,10 @@ const VerseList = ({
       <div className="flex justify-center m-auto w-full lg:w-3/5 my-6">
         <ChapterHeader chapterId={search.chapter_id} />
       </div>
-      <Bismillah chapterId={search.chapter_id} />
+      <Bismillah
+        chapterId={search.chapter_id}
+        verseNumber={verses[0]?.verse_number}
+      />
       {renderVerses(verses, direction)}
       <DivLoading ref={ref} hidden={page >= pages[1]} key="loader">
         Loading ...

@@ -6,14 +6,19 @@ import styled from "styled-components";
 
 interface BismillahProps {
   chapterId?: number;
+  verseNumber?: number;
 }
 const TextArabic = styled.p`
   line-height: 4rem;
 `;
-const Bismillah = ({ chapterId }: BismillahProps) => {
+const Bismillah = ({ chapterId, verseNumber }: BismillahProps) => {
   const [cwb] = useState([1, 9]);
+  console.log(verseNumber);
   const renderdBismillah =
-    chapterId !== undefined && !cwb.includes(chapterId) ? (
+    chapterId !== undefined &&
+    !cwb.includes(chapterId) &&
+    verseNumber !== undefined &&
+    verseNumber === 1 ? (
       <div className="flex pt-5 pb-2 justify-center">
         {/* <Image
           src="/assets/images/bismillah.svg"
