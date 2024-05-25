@@ -15,7 +15,7 @@ import { VersWitnTranslation } from "@/db/queries/verses";
 interface VerseListProps {
   search: Partial<VersWitnTranslation>;
   pages: [number, number];
-  initialVerses: Verse[];
+  initialVerses: VersWitnTranslation[];
   tid: number | undefined;
   direction: string | undefined;
 }
