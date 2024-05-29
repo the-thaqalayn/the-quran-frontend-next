@@ -23,6 +23,7 @@ import {
   TranslationTextFont,
   getTranslationTextFont,
 } from "@/app/utils/translationFonts";
+import { color } from "framer-motion";
 interface VerseListCardProps {
   verse: VersWitnTranslation;
   direction: string | undefined;
@@ -35,6 +36,9 @@ const TextTranslation = styled.p<{ dir: string | undefined }>`
   direction: ${(props) => props.dir ?? "ltr"};
   text-align: ${(props) => (props.dir === "rtl" ? "start" : "end")};
 `;
+const TextVerseKey = styled.p<{ isSajdeh: boolean | undefined }>`
+  text-decoration: ${(props) => (props.isSajdeh ? "underline" : "none")};
+`;
 
 export default function VerseListCard({
   verse,
@@ -45,7 +49,13 @@ export default function VerseListCard({
   // ` ${arabicFont} ${translationFont}`
   setArabicFont(() => getArabicTextFont(ArabicTextFont.Amiri));
   setTranslationFont(() => getTranslationTextFont(TranslationTextFont.Katibeh));
-  const { verse_key, page_number, text_uthmani, verseTranslation } = verse;
+  const {
+    verse_key,
+    page_number,
+    text_uthmani,
+    verseTranslation,
+    sajdah_number,
+  } = verse;
   console.log("direction:", direction);
 
   const renderedTranslation = verse.verseTranslation ? (
@@ -66,9 +76,12 @@ export default function VerseListCard({
   return (
     <Card className="w-full p-4 my-3  dark:bg-gray-600 ">
       <CardHeader className="justify-between ">
-        <div className="flex w-12 h-12 bg-blue-100 dark:bg-cyan-800  border border-solid dark:border-gray-400 text-blue-600 rounded-full items-center justify-center">
+        <TextVerseKey
+          isSajdeh={sajdah_number != null}
+          className="flex w-12 h-12 bg-blue-100 dark:bg-cyan-800  border border-solid dark:border-gray-400 text-blue-600 rounded-full items-center justify-center"
+        >
           <h3 className="dark:text-gray-50">{verse_key}</h3>
-        </div>
+        </TextVerseKey>
         <div>
           <FontAwesomeIcon
             icon={faEllipsisVertical}
