@@ -29,14 +29,15 @@ interface VerseListCardProps {
   direction: string | undefined;
 }
 
-const TextArabic = styled.p`
+const TextArabic = styled.p<{ isSajdeh: boolean | undefined }>`
   line-height: 4rem;
+  text-decoration: ${(props) => (props.isSajdeh ? "underline" : "none")};
 `;
 const TextTranslation = styled.p<{ dir: string | undefined }>`
   direction: ${(props) => props.dir ?? "ltr"};
   text-align: ${(props) => (props.dir === "rtl" ? "start" : "end")};
 `;
-const TextVerseKey = styled.p<{ isSajdeh: boolean | undefined }>`
+const TextVerseKey = styled.div<{ isSajdeh: boolean | undefined }>`
   text-decoration: ${(props) => (props.isSajdeh ? "underline" : "none")};
 `;
 
@@ -92,7 +93,10 @@ export default function VerseListCard({
       </CardHeader>
       <CardBody className="px-8 py-4 ">
         <div className="text-end text-4xl text-cyan-900 break-words">
-          <TextArabic className="dark:text-cyan-500 font-textArabic">
+          <TextArabic
+            isSajdeh={sajdah_number != null}
+            className="dark:text-cyan-500 font-textArabic"
+          >
             {text_uthmani}
           </TextArabic>
         </div>
