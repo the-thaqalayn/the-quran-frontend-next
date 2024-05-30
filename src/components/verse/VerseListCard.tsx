@@ -36,7 +36,7 @@ const TextTranslation = styled.p<{ dir: string | undefined }>`
   direction: ${(props) => props.dir ?? "ltr"};
   text-align: ${(props) => (props.dir === "rtl" ? "start" : "end")};
 `;
-const TextVerseKey = styled.p<{ isSajdeh: boolean | undefined }>`
+const TextVerseKey = styled.div<{ isSajdeh: boolean | undefined }>`
   text-decoration: ${(props) => (props.isSajdeh ? "underline" : "none")};
 `;
 
