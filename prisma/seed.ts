@@ -49,10 +49,9 @@ async function main() {
   //   data: translationsCreate,
   // });
   // console.log(JSON.stringify(translationsCreate.map((t) => t.id).join(",")));
-
-  await prisma.verseTranslation.createMany({
-    data: verseTranslationFile.translations,
-  });
+  // await prisma.verseTranslation.createMany({
+  //   data: verseTranslationFile.translations,
+  // });
 }
 main()
   .then(async () => {
