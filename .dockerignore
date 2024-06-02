@@ -1,6 +1,6 @@
 Dockerfile
 .dockerignore
-node_modules
 README.md
 .next
 prisma/json-files
+.vscode
