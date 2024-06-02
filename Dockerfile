@@ -29,3 +29,9 @@ EXPOSE 3000
 CMD [ "npm", "start" ]
 
 
+FROM base as dev
+ENV NODE_ENV=development
+COPY . .
+CMD npm run dev
+
+
