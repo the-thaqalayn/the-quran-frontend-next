@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "prisma:seed": "node prisma/seed.ts",
-    "serverprebuild": "npx prisma generate"
+    "serverprebuild": "npx prisma generate",
+    "NodeOptions":"export NODE_OPTIONS=--max-old-space-size=4096"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
