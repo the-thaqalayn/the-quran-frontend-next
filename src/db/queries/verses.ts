@@ -2,7 +2,7 @@ import type { Verse, Translation, VerseTranslation } from "@prisma/client";
 import { db } from "@/db";
 import { select } from "@nextui-org/react";
 
-export type VersWitnTranslation = Omit<
+export type VersWithTranslation = Omit<
   Verse,
   "text_indopak" | "code_v1" | "code_v2"
 > & {
@@ -25,7 +25,7 @@ export const getDirection = async (tid: number | undefined) => {
 export const getVersesByPage = (
   v: Partial<Verse>,
   tid: number | undefined
-): Promise<VersWitnTranslation[]> => {
+): Promise<VersWithTranslation[]> => {
   if (tid) {
     return db.verse.findMany({
       where: {

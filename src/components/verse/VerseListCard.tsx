@@ -16,7 +16,7 @@ import type { Verse } from "@prisma/client";
 import { faBookmark, faCopy } from "@fortawesome/free-regular-svg-icons";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-import { VersWitnTranslation } from "@/db/queries/verses";
+import { VersWithTranslation } from "@/db/queries/verses";
 import { SettingContext } from "../common/SettingProvider";
 import { ArabicTextFont, getArabicTextFont } from "@/app/utils/arabicFonts";
 import {
@@ -25,7 +25,7 @@ import {
 } from "@/app/utils/translationFonts";
 import { color } from "framer-motion";
 interface VerseListCardProps {
-  verse: VersWitnTranslation;
+  verse: VersWithTranslation;
   direction: string | undefined;
 }
 

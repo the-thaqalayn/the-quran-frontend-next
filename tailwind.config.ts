@@ -1,6 +1,6 @@
 import { light } from "@fortawesome/fontawesome-svg-core/import.macro";
 import type { Config } from "tailwindcss";
-import colors, { gray } from "tailwindcss/colors";
+import { gray } from "tailwindcss/colors";
 
 const { nextui } = require("@nextui-org/react");
 
@@ -24,7 +24,7 @@ const config: Config = {
     nextui({
       themes: {
         light: {
-          colors: colors,
+          // colors: colors,
         },
         dark: {
           colors: {
@@ -37,7 +37,7 @@ const config: Config = {
 
             // black: colors.orange[900],
             // white: colors.gray[600],
-            background: colors.gray[700],
+            background: gray[700],
             // blue: {
             //   "700": colors.cyan[800],
             // },
