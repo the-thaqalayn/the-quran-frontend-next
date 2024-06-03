@@ -10,17 +10,20 @@ import styled from "styled-components";
 // import { loadFontFaceV } from "@/app/utils/fontFaceHelper";
 import Bismillah from "@/components/bismillah/Bismillah";
 import ChapterHeader from "../header/ChapterHeader";
-import { VersWitnTranslation } from "@/db/queries/verses";
+import { VersWithTranslation } from "@/db/queries/verses";
 
 interface VerseListProps {
-  search: Partial<VersWitnTranslation>;
+  search: Partial<VersWithTranslation>;
   pages: [number, number];
-  initialVerses: VersWitnTranslation[];
+  initialVerses: VersWithTranslation[];
   tid: number | undefined;
   direction: string | undefined;
 }
 
-const renderVerses = (vs: Verse[], direction: string | undefined) => {
+const renderVerses = (
+  vs: VersWithTranslation[],
+  direction: string | undefined
+) => {
   return vs.map((v) => {
     return (
       <div>
