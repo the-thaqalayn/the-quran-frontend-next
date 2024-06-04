@@ -4,11 +4,26 @@ services:
     image: the-quran-next
     build:
       context: ./
-      target: dev
+      target: production
       dockerfile: Dockerfile
     volumes:
-      - .:/app
-      - /app/node_modules
-      - /app/.next
+      - quranvol:/app
     ports:
       - "3000:3000"
+volumes:
+  - quranvol
+# version: "3.8"
+# services:
+#   app:
+#     image: the-quran-next
+#     build:
+#       context: ./
+#       target: dev
+#       dockerfile: Dockerfile
+#     volumes:
+#       - .:/app
+#       - /app/node_modules
+#       - /app/.next
+#       - /app/prisma
+#     ports:
+#       - "3000:3000"
