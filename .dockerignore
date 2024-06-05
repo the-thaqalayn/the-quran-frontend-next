@@ -1,6 +1,6 @@
 Dockerfile
+compose.yml
 .dockerignore
 README.md
 .next
-prisma/json-files
 .vscode
