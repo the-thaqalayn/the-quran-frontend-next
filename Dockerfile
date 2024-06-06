@@ -1,14 +1,15 @@
 FROM node:lts-alpine AS base
 WORKDIR /app
-COPY package.json .
-# RUN npm install
+ENV NEXT_TELEMETRY_DISABLED 1
+COPY package*.json .
+# RUN npm ci
 
 FROM base AS build
 COPY . .
-RUN npm run build
 RUN npx prisma generate
 RUN npx prisma db push
 RUN npm run prisma:seed
+RUN npm run build
 
 
 FROM base AS production
