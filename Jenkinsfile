@@ -3,9 +3,9 @@ pipeline{
         label "agent0"
     }
     stages{
-        stage("A"){
+        stage("Database"){
             steps{
-                echo "========executing A========"
+                sh 'docker compose -f ./compose.database.yml up'
             }
             post{
                 always{
