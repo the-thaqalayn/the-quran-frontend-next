@@ -1,0 +1,40 @@
+services:
+  db:
+    container_name: postgres
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 1s
+      timeout: 5s
+      retries: 10
+    ports:
+      - 6500:5432
+    volumes:
+      - quran_data:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8089:8080
+
+volumes:
+  quran_data:
+# version: "3.8"
+# services:
+#   app:
+#     image: the-quran-next
+#     build:
+#       context: ./
+#       target: dev
+#       dockerfile: Dockerfile
+#     volumes:
+#       - .:/app
+#       - /app/node_modules
+#       - /app/.next
+#       - /app/prisma
+#     ports:
+#       - "3000:3000"
