@@ -20,6 +20,9 @@ pipeline{
                 echo "Fetched Repo"
             }
         }
+        stage("Prepare Postgres"){
+            sh 'docker compose -f ./compose.database.yml up'
+        }
     }
     post{
         always{
