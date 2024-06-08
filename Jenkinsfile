@@ -3,20 +3,9 @@ pipeline{
         label "agent0"
     }
     stages{
-        stage("Database"){
+        stage("Fetch Repo"){
             steps{
-                sh 'docker compose -f ./compose.database.yml up'
-            }
-            post{
-                always{
-                    echo "========always========"
-                }
-                success{
-                    echo "========A executed successfully========"
-                }
-                failure{
-                    echo "========A execution failed========"
-                }
+                git branch: 'feature', credentialsId: 'jenkins-github', url: 'https://github.com/mehradi-github/the-quran-frontend-next.git'
             }
         }
     }
