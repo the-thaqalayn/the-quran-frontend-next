@@ -1,11 +1,23 @@
 pipeline{
-    agent{
+    agent {
         label "agent0"
+    }
+    parameters {
+        booleanParam (
+            defaultValue: true,
+            description: '',
+            name: 'FETCH_REPO'
+        )
     }
     stages{
         stage("Fetch Repo"){
+            when {
+                expression { params.FETCH_REPO}
+            }
             steps{
+                cleanWs()
                 git branch: 'feature', credentialsId: 'jenkins-github', url: 'https://github.com/mehradi-github/the-quran-frontend-next.git'
+                echo "Fetched Repo"
             }
         }
     }
