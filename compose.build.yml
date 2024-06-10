@@ -1,26 +1,4 @@
 services:
-  db:
-    container_name: postgres
-    image: postgres
-    restart: always
-    env_file:
-      - .env
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready"]
-      interval: 1s
-      timeout: 5s
-      retries: 10
-    ports:
-      - 6500:5432
-    volumes:
-      - quran_data:/var/lib/postgresql/data
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8089:8080
-
   app:
     image: the-quran-next
     build:
@@ -31,8 +9,6 @@ services:
       - quran_app:/app
     ports:
       - "3000:3000"
-    depends_on:
-      - db
     env_file:
       - .env
 volumes:

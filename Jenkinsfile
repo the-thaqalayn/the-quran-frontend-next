@@ -23,6 +23,9 @@ pipeline{
         stage("Prepare Postgres"){
             sh 'docker compose -f ./compose.database.yml up'
         }
+        stage("Build"){
+            sh 'docker compose -f ./compose.build.yml up'
+        }
     }
     post{
         always{
